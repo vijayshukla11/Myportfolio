@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Shukla | Digital Marketing & E-commerce Expert</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #f72585;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4cc9f0;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, #7209b7 100%);
+            --gradient-success: linear-gradient(135deg, var(--success) 0%, #3a0ca3 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--dark);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 12rem 0 8rem;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .floating-card {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-card:nth-child(1) {
+            top: 0;
+            left: 0;
+            background: var(--gradient);
+            color: white;
+            width: 180px;
+            animation-delay: 0s;
+        }
+        
+        .floating-card:nth-child(2) {
+            top: 50px;
+            right: 0;
+            background: var(--gradient-accent);
+            color: white;
+            width: 220px;
+            animation-delay: 1s;
+        }
+        
+        .floating-card:nth-child(3) {
+            bottom: 0;
+            left: 50px;
+            background: var(--gradient-success);
+            color: white;
+            width: 200px;
+            animation-delay: 2s;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.05;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="50" r="40" stroke="white" stroke-width="2" fill="none" /><rect x="25" y="25" width="50" height="50" stroke="white" stroke-width="1" fill="none" /></svg>');
+            background-size: 200px;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary);
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+        }
+        
+        .hero-cta {
+            margin-top: 3rem;
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+            z-index: -1;
+        }
+        
+        .btn:hover:before {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            box-shadow: 0 10px 20px rgba(247, 37, 133, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(247, 37, 133, 0.4);
+        }
+        
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Animated Circles */
+        .circles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .circles li {
+            position: absolute;
+            display: block;
+            list-style: none;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            animation: animate 25s linear infinite;
+            bottom: -150px;
+            border-radius: 50%;
+        }
+        
+        .circles li:nth-child(1) {
+            left: 25%;
+            width: 80px;
+            height: 80px;
+            animation-delay: 0s;
+        }
+        
+        .circles li:nth-child(2) {
+            left: 10%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 2s;
+            animation-duration: 12s;
+        }
+        
+        .circles li:nth-child(3) {
+            left: 70%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 4s;
+        }
+        
+        .circles li:nth-child(4) {
+            left: 40%;
+            width: 60px;
+            height: 60px;
+            animation-delay: 0s;
+            animation-duration: 18s;
+        }
+        
+        .circles li:nth-child(5) {
+            left: 65%;
+            width: 20px;
+            height: 20px;
+            animation-delay: 0s;
+        }
+        
+        .circles li:nth-child(6) {
+            left: 75%;
+            width: 110px;
+            height: 110px;
+            animation-delay: 3s;
+        }
+        
+        .circles li:nth-child(7) {
+            left: 35%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 7s;
+        }
+        
+        .circles li:nth-child(8) {
+            left: 50%;
+            width: 25px;
+            height: 25px;
+            animation-delay: 15s;
+            animation-duration: 45s;
+        }
+        
+        .circles li:nth-child(9) {
+            left: 20%;
+            width: 15px;
+            height: 15px;
+            animation-delay: 2s;
+            animation-duration: 35s;
+        }
+        
+        .circles li:nth-child(10) {
+            left: 85%;
+            width: 150px;
+            height: 150px;
+            animation-delay: 0s;
+            animation-duration: 11s;
+        }
+        
+        @keyframes animate {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 0;
+            }
+            
+            100% {
+                transform: translateY(-1000px) rotate(720deg);
+                opacity: 0;
+                border-radius: 50%;
+            }
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 5px;
+            background: var(--gradient-accent);
+            margin: 20px auto;
+            border-radius: 3px;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 5px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .skill-card h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.6rem;
+        }
+        
+        /* Dashboard */
+        .dashboard {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .data-filters {
+            display: flex;
+            gap: 0.5rem;
+            background: var(--light);
+            padding: 0.5rem;
+            border-radius: 50px;
+        }
+        
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            background: transparent;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+        }
+        
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2.5rem;
+        }
+        
+        .chart-container {
+            position: relative;
+            height: 350px;
+            background: var(--light);
+            border-radius: 15px;
+            padding: 1.5rem;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .metric-card {
+            background: var(--light);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            border-left: 5px solid var(--primary);
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-label {
+            font-size: 1rem;
+            color: var(--dark);
+            opacity: 0.7;
+        }
+        
+        .ai-insight {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .ai-icon {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 10rem;
+            opacity: 0.1;
+            transform: rotate(20deg);
+        }
+        
+        /* Experience Timeline */
+        .experience-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 4rem;
+        }
+        
+        .timeline-date {
+            flex: 1;
+            text-align: right;
+            padding-right: 3rem;
+            position: relative;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .timeline-date::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            right: -10px;
+            top: 5px;
+            z-index: 2;
+            box-shadow: 0 0 0 5px rgba(67, 97, 238, 0.2);
+        }
+        
+        .timeline-content {
+            flex: 2;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            border-left: 5px solid var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            border-right: 12px solid white;
+            left: -12px;
+            top: 20px;
+        }
+        
+        /* Certifications */
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .cert-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s;
+            border-bottom: 5px solid var(--success);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cert-card:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-success);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+        
+        .cert-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .cert-icon {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: var(--light);
+            padding: 6rem 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-text::before {
+            content: """;
+            font-size: 5rem;
+            color: var(--light);
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            font-family: Arial, sans-serif;
+            z-index: 0;
+            opacity: 0.5;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: var(--gradient);
+            color: white;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-title {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 2rem;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.8rem;
+            transition: all 0.3s;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-5px);
+            background: white;
+        }
+        
+        /* Particle Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 4rem;
+            }
+            
+            .hero-cta {
+                justify-content: center;
+            }
+            
+            .floating-card {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1.5rem;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .nav-links li {
+                margin: 0 0.8rem;
+            }
+            
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-date {
+                text-align: left;
+                padding-right: 0;
+                padding-left: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .timeline-date::after {
+                left: 0;
+                right: auto;
+            }
+            
+            .timeline-content::before {
+                display: none;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Vijay<span>Shukla</span></div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="animate__animated animate__fadeInDown">Vijay Shukla</h1>
+                    <p class="tagline animate__animated animate__fadeIn animate__delay-1s">Digital Marketing & E-commerce Manager</p>
+                    <p class="animate__animated animate__fadeIn animate__delay-1s">Data-driven marketer with expertise in AI-powered marketing strategies, SEO, PPC, and e-commerce optimization. Transforming brands through data analysis and innovative digital solutions.</p>
+                    <div class="hero-cta animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#dashboard" class="btn btn-outline">View Analytics</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card">
+                        <h4>SEO Growth</h4>
+                        <p>+65% Organic Traffic</p>
+                    </div>
+                    <div class="floating-card">
+                        <h4>ROI Improvement</h4>
+                        <p>+42% Campaign ROI</p>
+                    </div>
+                    <div class="floating-card">
+                        <h4>E-commerce Sales</h4>
+                        <p>+78% Revenue Growth</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content" style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <p class="animate__animated animate__fadeIn">Creative and performance-driven Digital Marketer & E-commerce Manager with over 2 years of experience in Shopify development, performance marketing, SEO, Google/Facebook Ads, and AI-based marketing automation.</p>
+                <p class="animate__animated animate__fadeIn animate__delay-1s">Proven ability to manage entire e-commerce lifecycles — from store creation and campaign strategy to data analysis and tech troubleshooting. Strong understanding of consumer behavior, conversion funnels, and ROI optimization.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card animate__animated">
+                    <div class="skill-icon"><i class="fas fa-search"></i></div>
+                    <h3>SEO</h3>
+                    <p>Technical & Content SEO strategies to improve rankings and organic traffic</p>
+                </div>
+                <div class="skill-card animate__animated">
+                    <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>SEM & PPC</h3>
+                    <p>Google Ads, Facebook Ads, Amazon PPC with pixel setup and conversion tracking</p>
+                </div>
+                <div class="skill-card animate__animated">
+                    <div class="skill-icon"><i class="fas fa-robot"></i></div>
+                    <h3>AI Marketing Tools</h3>
+                    <p>ChatGPT, Grok, Canva AI, Email Automation for enhanced marketing efficiency</p>
+                </div>
+                <div class="skill-card animate__animated">
+                    <div class="skill-icon"><i class="fas fa-analytics"></i></div>
+                    <h3>Data Analysis</h3>
+                    <p>Google Analytics, Meta Business Suite, Excel, Google Sheets for data-driven decisions</p>
+                </div>
+                <div class="skill-card animate__animated">
+                    <div class="skill-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>E-commerce Management</h3>
+                    <p>Amazon, Flipkart, Meesho, Shopify store management and optimization</p>
+                </div>
+                <div class="skill-card animate__animated">
+                    <div class="skill-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Digital Strategy</h3>
+                    <p>Campaign planning, marketing automation, and ROI optimization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="dashboard">
+        <div class="container">
+            <h2 class="section-title">Marketing Analytics Dashboard</h2>
+            <div class="dashboard">
+                <div class="dashboard-header">
+                    <h3>Campaign Performance</h3>
+                    <div class="data-filters">
+                        <button class="filter-btn active">Last 7 Days</button>
+                        <button class="filter-btn">Last 30 Days</button>
+                        <button class="filter-btn">Last Quarter</button>
+                    </div>
+                </div>
+                
+                <div class="chart-grid">
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                    
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value">4.8%</div>
+                            <div class="metric-label">Conversion Rate</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">34%</div>
+                            <div class="metric-label">ROI Increase</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">62%</div>
+                            <div class="metric-label">Organic Traffic Growth</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value">3.2x</div>
+                            <div class="metric-label">ROAS</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ai-insight">
+                    <i class="ai-icon">🤖</i>
+                    <h4>AI Analysis Insight</h4>
+                    <p>Based on current campaign data, your SEO efforts have resulted in a 34% increase in organic traffic month-over-month. Facebook Ads are performing best for the 25-34 age demographic with a 3.2% conversion rate. Recommendation: Increase budget for top-performing ad sets by 15% and optimize product pages for mobile users to improve conversion rate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2024 - Present</div>
+                    <div class="timeline-content">
+                        <h3>JustMySalad & Love Latte</h3>
+                        <p><strong>Purchase & Operations Head</strong></p>
+                        <ul>
+                            <li>Managed end-to-end operations of multiple F&B outlets</li>
+                            <li>Developed company websites and digital menus using no-code tools and AI platforms</li>
+                            <li>Created detailed monthly financial and performance reports</li>
+                            <li>Collaborated with marketing team for seasonal campaigns and platform management</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2023 - 2024</div>
+                    <div class="timeline-content">
+                        <h3>VKStore</h3>
+                        <p><strong>E-commerce Executive</strong></p>
+                        <ul>
+                            <li>Oversaw complete e-commerce operations across Amazon, Flipkart, and Shopify</li>
+                            <li>Conducted deep on-page and off-page SEO strategies</li>
+                            <li>Ran product testing campaigns and improved conversion rates</li>
+                            <li>Developed content for ads and optimized store UI</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">2022 - 2023</div>
+                    <div class="timeline-content">
+                        <h3>Gadgetwala</h3>
+                        <p><strong>Shopify Store Manager - Dropshipping</strong></p>
+                        <ul>
+                            <li>Designed, developed, and launched a Shopify dropshipping store</li>
+                            <li>Managed entire ad funnel using Facebook Ads and Google Ads</li>
+                            <li>Created A/B testing funnels for different product variants</li>
+                            <li>Implemented automation tools for order flow and notifications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Education</h2>
+            <div class="certifications">
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>BCA Degree</h3>
+                    <p>M.G.K.V.P. University</p>
+                    <p>GPA: 3.8/4.0</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h3>Digital Marketing with AI</h3>
+                    <p>PW Skills (Ongoing)</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fab fa-amazon"></i></div>
+                    <h3>Amazon PPC Certification</h3>
+                    <p>Amazon Advertising</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon"><i class="fas fa-award"></i></div>
+                    <h3>MyGreatLearning Certifications</h3>
+                    <p>Excel, SEO, HTML & CSS, MS Word, Soft Skills</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Vijay transformed our digital marketing strategy. His expertise in SEO and data analysis helped us increase organic traffic by 65% in just three months."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JS</div>
+                        <div>
+                            <strong>JustMySalad Marketing Director</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The AI-powered campaign strategies implemented by Vijay resulted in a 42% increase in ROAS for our e-commerce store. His data-driven approach is impressive."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">VK</div>
+                        <div>
+                            <strong>VKStore Owner</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Vijay's expertise in Amazon PPC and marketplace management helped us optimize our product listings and increase sales by 78% during the holiday season."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">GW</div>
+                        <div>
+                            <strong>Gadgetwala CEO</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Ready to Boost Your Digital Marketing Performance?</h2>
+                <p>Let's discuss how my expertise in AI-driven marketing and data analysis can help grow your business</p>
+                <a href="mailto:vks885352@gmail.com" class="btn btn-primary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="logo">Vijay<span>Shukla</span></div>
+            <p>Digital Marketing & E-commerce Expert</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p>📱 7388840336 | ✉️ vks885352@gmail.com</p>
+            <p>📍 nalanda colony, bcrivall west, mumbai, maharastra</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize performance chart
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('performanceChart').getContext('2d');
+            const performanceChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Organic Traffic', 'Paid Conversions', 'Email CTR', 'Social Engagement', 'ROAS'],
+                    datasets: [{
+                        label: 'Current Performance',
+                        data: [78, 45, 32, 56, 68],
+                        backgroundColor: [
+                            'rgba(67, 97, 238, 0.7)',
+                            'rgba(76, 201, 240, 0.7)',
+                            'rgba(247, 37, 133, 0.7)',
+                            'rgba(58, 12, 163, 0.7)',
+                            'rgba(114, 9, 183, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(67, 97, 238, 1)',
+                            'rgba(76, 201, 240, 1)',
+                            'rgba(247, 37, 133, 1)',
+                            'rgba(58, 12, 163, 1)',
+                            'rgba(114, 9, 183, 1)'
+                        ],
+                        borderWidth: 1
+                    }, {
+                        label: 'Industry Average',
+                        data: [52, 32, 28, 42, 45],
+                        backgroundColor: 'rgba(200, 200, 200, 0.3)',
+                        borderColor: 'rgba(200, 200, 200, 1)',
+                        borderWidth: 1,
+                        type: 'line',
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointBorderColor: 'rgba(200, 200, 200, 1)',
+                        pointBackgroundColor: 'rgba(200, 200, 200, 0.5)'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            ticks: {
+                                callback: function(value) {
+                                    return value + '%';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Marketing Performance Metrics (%)',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + context.raw + '%';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Filter buttons functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Simulate data change based on filter
+                    const newData = this.textContent === 'Last 7 Days' ? 
+                        [78, 45, 32, 56, 68] : 
+                        this.textContent === 'Last 30 Days' ? 
+                        [82, 52, 38, 61, 72] : 
+                        [85, 58, 42, 65, 76];
+                    
+                    performanceChart.data.datasets[0].data = newData;
+                    performanceChart.update();
+                    
+                    // Update metrics based on selected timeframe
+                    const metrics = document.querySelectorAll('.metric-value');
+                    if (this.textContent === 'Last 7 Days') {
+                        metrics[0].textContent = '4.8%';
+                        metrics[1].textContent = '34%';
+                        metrics[2].textContent = '62%';
+                        metrics[3].textContent = '3.2x';
+                    } else if (this.textContent === 'Last 30 Days') {
+                        metrics[0].textContent = '5.2%';
+                        metrics[1].textContent = '38%';
+                        metrics[2].textContent = '68%';
+                        metrics[3].textContent = '3.5x';
+                    } else {
+                        metrics[0].textContent = '5.8%';
+                        metrics[1].textContent = '42%';
+                        metrics[2].textContent = '72%';
+                        metrics[3].textContent = '3.8x';
+                    }
+                    
+                    // Update AI insight based on selected timeframe
+                    const aiInsight = document.querySelector('.ai-insight p');
+                    if (this.textContent === 'Last 7 Days') {
+                        aiInsight.textContent = "Based on current campaign data, your SEO efforts have resulted in a 34% increase in organic traffic month-over-month. Facebook Ads are performing best for the 25-34 age demographic with a 3.2% conversion rate. Recommendation: Increase budget for top-performing ad sets by 15% and optimize product pages for mobile users to improve conversion rate.";
+                    } else if (this.textContent === 'Last 30 Days') {
+                        aiInsight.textContent = "Over the past 30 days, your campaigns have shown consistent improvement. Email marketing CTR increased by 18% after implementing AI-personalized subject lines. Amazon PPC campaigns achieved a 4.1% conversion rate, exceeding industry average by 32%. Recommendation: Scale successful Amazon campaigns and apply similar targeting strategies to Facebook Ads.";
+                    } else {
+                        aiInsight.textContent = "Quarterly analysis shows strong growth across all channels. Organic traffic is up 62% YoY, and ROAS has improved by 41% through better audience targeting and AI-powered bid optimization. Recommendation: Consider expanding to new marketplaces like Meesho and develop a content strategy to capitalize on increased organic visibility.";
+                    }
+                });
+            });
+            
+            // Animate elements on scroll
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.skill-card, .cert-card, .testimonial-card, .animate__animated');
+                
+                elements.forEach(element => {
+                    const position = element.getBoundingClientRect();
+                    
+                    // If element is in viewport
+                    if(position.top < window.innerHeight && position.bottom >= 0) {
+                        element.classList.add('animate__fadeInUp');
+                    }
+                });
+            };
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', animateOnScroll);
+            // Initial check
+            animateOnScroll();
+            
+            // Add floating animation to elements
+            const floatingElements = document.querySelectorAll('.skill-card, .cert-card, .testimonial-card');
+            floatingElements.forEach((element, index) => {
+                element.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+    </script>
+</body>
+</html>
